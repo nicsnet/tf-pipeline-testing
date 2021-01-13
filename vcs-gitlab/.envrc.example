@@ -1,0 +1,4 @@
+export TF_VAR_token="TFC_USER_TOKEN"
+export TF_VAR_tfc_org="TFC_ORG"
+export TF_VAR_oauth_token_id="TFC_OAUTH_TOKEN_ID"
+export TF_VAR_repo_org="GITLAB_ORG_OR_USER"
