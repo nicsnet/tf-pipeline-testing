@@ -15,7 +15,7 @@ resource "tfe_workspace" "workspace" {
   organization = var.tfc_org
   auto_apply   = true
   vcs_repo {
-    oauth_token_id = var.oauth_token_id
+    oauth_token_id = var.gitlab_oauth_token_id
     identifier     = "${var.repo_org}/terraform-randomness"
   }
 }
@@ -24,11 +24,6 @@ resource "tfe_workspace" "workspace-public-repo" {
    name         = "workspace-public-repo"
    organization = var.tfc_org
    auto_apply   = true
-   # vcs_repo {
-   #   oauth_token_id = var.oauth_token_id
-   #   identifier     = "${var.repo_org}/terraform-random"
-   #   identifier     = each.value.identifier
-   # }
  }
 
 
@@ -37,7 +32,7 @@ resource "tfe_workspace" "workspace-github" {
   organization = var.tfc_org
   auto_apply   = true
   vcs_repo {
-    oauth_token_id     = "ot-vaZ2AGUzxXJKzBDK"
+    oauth_token_id     = var.github_oauth_token_id
     identifier         = "${var.repo_org}/tfc-random"
   }
 }
@@ -47,7 +42,7 @@ resource "tfe_workspace" "workspace-submodule" {
   organization = var.tfc_org
   auto_apply   = true
   vcs_repo {
-    oauth_token_id     = var.oauth_token_id
+    oauth_token_id     = var.gitlab_oauth_token_id
     identifier         = "${var.repo_org}/terraform-random-submodule"
     ingress_submodules = true
   }
@@ -62,7 +57,7 @@ resource "tfe_policy_set" "test" {
 
   vcs_repo {
     identifier     = "${var.repo_org}/test-policy-set"
-    oauth_token_id = var.oauth_token_id
+    oauth_token_id = var.gitlab_oauth_token_id
   }
 }
 
@@ -93,7 +88,7 @@ resource "tfe_workspace" "workspace-monorepos" {
   organization      = var.tfc_org
   auto_apply        = true
   vcs_repo {
-    oauth_token_id = var.oauth_token_id
+    oauth_token_id = var.gitlab_oauth_token_id
     identifier     = "${var.repo_org}/terraform-multi-random"
   }
 }
@@ -103,7 +98,7 @@ resource "tfe_registry_module" "test-registry-module" {
   vcs_repo {
     display_identifier = "${var.repo_org}/terraform-random-module"
     identifier         = "${var.repo_org}/terraform-random-module"
-    oauth_token_id     = var.oauth_token_id
+    oauth_token_id     = var.gitlab_oauth_token_id
   }
 }
 
