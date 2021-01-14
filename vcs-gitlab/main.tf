@@ -15,8 +15,8 @@ resource "tfe_workspace" "workspace" {
   organization = var.tfc_org
   auto_apply   = true
   vcs_repo {
-    oauth_token_id = var.gitlab_oauth_token_id
-    identifier     = "${var.repo_org}/terraform-randomness"
+    oauth_token_id = var.github_oauth_token_id
+    identifier     = "${var.repo_org}/tfc-random"
   }
 }
 
@@ -32,8 +32,8 @@ resource "tfe_workspace" "workspace-github" {
   organization = var.tfc_org
   auto_apply   = true
   vcs_repo {
-    oauth_token_id     = var.github_oauth_token_id
-    identifier         = "${var.repo_org}/tfc-random"
+    oauth_token_id     = var.gitlab_oauth_token_id
+    identifier         = "${var.repo_org}/terraform-randomness"
   }
 }
 
@@ -42,8 +42,8 @@ resource "tfe_workspace" "workspace-submodule" {
   organization = var.tfc_org
   auto_apply   = true
   vcs_repo {
-    oauth_token_id     = var.gitlab_oauth_token_id
-    identifier         = "${var.repo_org}/terraform-random-submodule"
+    oauth_token_id     = var.github_oauth_token_id
+    identifier         = "${var.repo_org}/tfc-random"
     ingress_submodules = true
   }
 }
@@ -88,8 +88,8 @@ resource "tfe_workspace" "workspace-monorepos" {
   organization      = var.tfc_org
   auto_apply        = true
   vcs_repo {
-    oauth_token_id = var.gitlab_oauth_token_id
-    identifier     = "${var.repo_org}/terraform-multi-random"
+    oauth_token_id = var.github_oauth_token_id
+    identifier     = "${var.repo_org}/tfc-random"
   }
 }
 
